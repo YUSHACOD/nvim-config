@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c","javascript","cpp","python","help","typescript", "lua", "vim", "help", "query" },
+  ensure_installed = { "c", "javascript", "cpp", "python", "typescript", "lua", "vim", "query" },
 
   sync_install = false,
 

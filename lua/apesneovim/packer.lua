@@ -1,19 +1,18 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
+	use 'wbthomason/packer.nvim'
 
-  use 'rebelot/kanagawa.nvim'
+	use 'rebelot/kanagawa.nvim'
   
-  use {
+	use {
        'nvim-telescope/telescope.nvim', tag = '0.1.1',
        requires = { {'nvim-lua/plenary.nvim'} }
       }
   
-  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use "lukas-reineke/indent-blankline.nvim"
+	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
-  use {
+	use {
 	  'VonHeikemen/lsp-zero.nvim',branch = 'v1.x',requires = {
     -- LSP Support
     {'neovim/nvim-lspconfig'},             -- Required
@@ -44,5 +43,7 @@ return require('packer').startup(function(use)
 
 	use "EdenEast/nightfox.nvim"
 	use {'srcery-colors/srcery-vim', as = 'srcery'}
-	
+	use { "ellisonleao/gruvbox.nvim" }
+	use "lukas-reineke/indent-blankline.nvim"
+	use "savq/melange-nvim"
 end)

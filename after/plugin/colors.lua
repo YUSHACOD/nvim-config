@@ -8,7 +8,5 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" }) 
 	vim.cmd('highlight TelescopeBorder guibg=none')
 	vim.cmd('highlight TelescopeTitle guibg=none')
-
 end
-
 ColorMyPencils()
