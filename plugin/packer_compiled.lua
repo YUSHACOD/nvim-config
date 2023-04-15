@@ -149,11 +149,6 @@ _G.packer_plugins = {
     path = "/home/apeslinux/.local/share/nvim/site/pack/packer/start/melange-nvim",
     url = "https://github.com/savq/melange-nvim"
   },
-  ["nightfox.nvim"] = {
-    loaded = true,
-    path = "/home/apeslinux/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/EdenEast/nightfox.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/apeslinux/.local/share/nvim/site/pack/packer/start/nvim-cmp",
