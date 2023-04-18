@@ -9,6 +9,13 @@ return require('packer').startup(function(use)
        'nvim-telescope/telescope.nvim', tag = '0.1.1',
        requires = { {'nvim-lua/plenary.nvim'} }
     }
+
+	use {
+  		'nvim-tree/nvim-tree.lua',
+  		config = function()
+    		require("nvim-tree").setup {}
+  		end
+	}
   
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
