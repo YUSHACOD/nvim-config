@@ -50,6 +50,7 @@ return require('packer').startup(function(use)
 
 	use {'srcery-colors/srcery-vim', as = 'srcery'}
 	use { "ellisonleao/gruvbox.nvim" }
+	use 'navarasu/onedark.nvim'
 	use "lukas-reineke/indent-blankline.nvim"
 	use "savq/melange-nvim"
 end)
