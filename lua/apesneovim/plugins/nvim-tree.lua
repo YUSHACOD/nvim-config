@@ -11,6 +11,10 @@ return {
 			filters = {
 				dotfiles = true,
 			},
+			git = {
+				enable = true,
+				ignore = false
+			}
 		})
 	end
 
