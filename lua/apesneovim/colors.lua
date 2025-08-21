@@ -6,5 +6,3 @@ function SeeThroughBuffer()
 	vim.cmd('highlight TelescopeTitle guibg=none')
 	require('lualine').setup()
 end
-
-SeeThroughBuffer()

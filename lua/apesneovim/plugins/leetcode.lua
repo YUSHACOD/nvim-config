@@ -12,7 +12,7 @@ return {
 		arg = "leetcode.nvim",
 
 		---@type lc.lang
-		lang = "rust",
+		lang = "cpp",
 
 		cn = { -- leetcode.cn
 			enabled = false, ---@type boolean
