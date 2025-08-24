@@ -9,11 +9,10 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.opt.wrap = false
 vim.cmd("set smartindent")
-vim.cmd("set textwidth=80")
 vim.cmd("set linebreak")
 vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.cmd("set clipboard+=unnamedplus")
-vim.cmd.colorscheme "lunaperche"
+-- vim.cmd.colorscheme "lunaperche"
