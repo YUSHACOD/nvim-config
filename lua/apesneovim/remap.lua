@@ -37,3 +37,5 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>t", "<cmd>ToggleTerm<CR>")
 vim.keymap.set("t", "<C-t>", "<cmd>ToggleTerm<CR>")
+
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
