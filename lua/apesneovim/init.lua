@@ -1,7 +1,6 @@
 require("apesneovim.remap")
 require("apesneovim.set")
 require("apesneovim.lazy")
-require("apesneovim.colors")
 
 local autocmd = vim.api.nvim_create_autocmd
 
