@@ -16,3 +16,5 @@ vim.cmd("set shiftwidth=4")
 -- vim.g.loaded_netrwPlugin = 1
 vim.cmd("set clipboard+=unnamedplus")
 vim.o.winborder = "rounded"
+
+vim.loader.enable()

@@ -74,7 +74,7 @@ return {
 
 		local map = {
 			["ff"] = function() builtin.find_files(theme_presets.ivy()) end,
-			["<leader>s"] = function() builtin.live_grep(theme_presets.ivy()) end,
+			["fs"] = function() builtin.live_grep(theme_presets.ivy()) end,
 			["<leader>fb"] = function() builtin.buffers(theme_presets.dropdown()) end,
 			["<leader>fh"] = function() builtin.help_tags(theme_presets.dropdown()) end,
 			["<leader>fr"] = function() builtin.resume(theme_presets.dropdown()) end,

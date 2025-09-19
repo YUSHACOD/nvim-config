@@ -99,4 +99,5 @@ return {
 		---@type boolean
 		image_support = false,
 	},
+	lazy = true
 }

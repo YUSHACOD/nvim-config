@@ -14,24 +14,22 @@ return {
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
-		"hrsh7th/cmp-nvim-lsp",
-		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-cmdline",
-		"hrsh7th/nvim-cmp",
-		"L3MON4D3/LuaSnip",
-		"saadparwaiz1/cmp_luasnip",
+		-- "hrsh7th/cmp-nvim-lsp",
+		-- "hrsh7th/cmp-buffer",
+		-- "hrsh7th/cmp-path",
+		-- "hrsh7th/cmp-cmdline",
+		-- "hrsh7th/nvim-cmp",
 		"j-hui/fidget.nvim",
 	},
 
 	config = function()
-		local cmp = require('cmp')
-		local cmp_lsp = require("cmp_nvim_lsp")
+		-- local cmp = require('cmp')
+		-- local cmp_lsp = require("cmp_nvim_lsp")
 		local capabilities = vim.tbl_deep_extend(
 			"force",
 			{},
-			vim.lsp.protocol.make_client_capabilities(),
-			cmp_lsp.default_capabilities())
+			vim.lsp.protocol.make_client_capabilities())
+			-- cmp_lsp.default_capabilities()
 
 		require("fidget").setup({})
 		require("mason").setup()
@@ -45,6 +43,44 @@ return {
 					require("lspconfig")[server_name].setup {
 						capabilities = capabilities
 					}
+				end,
+
+				clangd = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.clangd.setup({
+						root_dir = lspconfig.util.root_pattern(
+							"compile_commands.json",
+							"compile_flags.txt",
+							".clangd",
+							".git"
+						),
+
+						-- Additional clangd-specific settings
+						cmd = {
+							"clangd",
+							"--background-index",
+							"--clang-tidy",
+							"--query-driver=D:\\HeavyPrograms\\VS\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\cl.exe",
+							-- Add or adjust flags here as needed:
+							-- "--completion-style=detailed",
+							-- "--header-insertion=iwyu",
+						},
+
+						-- Example of init_options for clangd
+						init_options = {
+							clangdFileStatus = true, -- Enables file status via LSP
+							usePlaceholders = true, -- Enables placeholders on completion
+							completeUnimported = true, -- Suggests completions for unimported headers/types
+						},
+
+						-- Optional: LSP-specific settings (if needed)
+						settings = {
+							-- clangd currently doesn't take user-defined settings, but you can include them here if future versions do
+							clangd = {
+								arguments = { "--query-driver=D:\\HeavyPrograms\\VS\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\cl.exe" },
+							},
+						},
+					})
 				end,
 
 				zls = function()
@@ -84,28 +120,21 @@ return {
 			}
 		})
 
-		local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
-		cmp.setup({
-			snippet = {
-				expand = function(args)
-					require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-				end,
-			},
-			mapping = cmp.mapping.preset.insert({
-				['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-				['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-				['<Enter>'] = cmp.mapping.confirm({ select = true }),
-				["<C-Space>"] = cmp.mapping.complete(),
-			}),
-			sources = cmp.config.sources({
-				{ name = "copilot", group_index = 2 },
-				{ name = 'nvim_lsp' },
-				{ name = 'luasnip' }, -- For luasnip users.
-			}, {
-				{ name = 'buffer' },
-			})
-		})
+		-- local cmp_select = { behavior = cmp.SelectBehavior.Select }
+		--
+		-- cmp.setup({
+		-- 	mapping = cmp.mapping.preset.insert({
+		-- 		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+		-- 		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+		-- 		['<Enter>'] = cmp.mapping.confirm({ select = true }),
+		-- 		["<C-Space>"] = cmp.mapping.complete(),
+		-- 	}),
+		-- 	sources = cmp.config.sources({
+		-- 		{ name = 'nvim_lsp' },
+		-- 	}, {
+		-- 		{ name = 'buffer' },
+		-- 	})
+		-- })
 
 		vim.diagnostic.config({
 			-- update_in_insert = true,
@@ -113,7 +142,7 @@ return {
 				focusable = false,
 				style = "minimal",
 				border = "rounded",
-				source = "always",
+				source = true,
 				header = "",
 				prefix = "",
 			},
