@@ -1,6 +1,8 @@
 require("apesneovim.remap")
 require("apesneovim.lazy")
 require("apesneovim.set")
+require("apesneovim.neovide")
+require("apesneovim.custom_commands")
 
 local autocmd = vim.api.nvim_create_autocmd
 
