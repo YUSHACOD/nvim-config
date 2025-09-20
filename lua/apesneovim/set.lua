@@ -17,4 +17,6 @@ vim.cmd("set shiftwidth=4")
 vim.cmd("set clipboard+=unnamedplus")
 vim.o.winborder = "rounded"
 
+vim.cmd("highlight! link NormalFloat Normal")
+
 vim.loader.enable()

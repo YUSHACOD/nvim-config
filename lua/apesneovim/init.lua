@@ -1,8 +1,9 @@
 require("apesneovim.remap")
-require("apesneovim.set")
 require("apesneovim.lazy")
+require("apesneovim.set")
 
 local autocmd = vim.api.nvim_create_autocmd
+
 
 autocmd('LspAttach', {
     callback = function(e)
