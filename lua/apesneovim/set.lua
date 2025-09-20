@@ -20,3 +20,5 @@ vim.o.winborder = "rounded"
 vim.cmd("highlight! link NormalFloat Normal")
 
 vim.loader.enable()
+
+vim.cmd.colorscheme('naysayer')

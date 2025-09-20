@@ -2,19 +2,19 @@ if vim.g.neovide then
 	-- changing the font size
 	vim.g.neovide_scale_factor = 1.0
 	local change_scale_factor = function(delta)
-		vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
+		vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + delta
 	end
 	vim.keymap.set("n", "<C-=>", function()
-		change_scale_factor(1.25)
+		change_scale_factor(0.05)
 	end)
 	vim.keymap.set("n", "<C-->", function()
-		change_scale_factor(1 / 1.25)
+		change_scale_factor(-0.05)
 	end)
 
 
 	-- font color rendering
 	vim.g.neovide_text_gamma = 0.0
-	vim.g.neovide_text_contrast = 0.5
+	vim.g.neovide_text_contrast = 1.0
 
 	-- font padding
 	vim.g.neovide_padding_top = 0
@@ -36,19 +36,19 @@ if vim.g.neovide then
 	vim.g.neovide_floating_corner_radius = 2.0
 
 	-- window animation length
-	vim.g.neovide_position_animation_length = 0.10
+	vim.g.neovide_position_animation_length = 0.2
 
 	-- scroll animation length
-	vim.g.neovide_scroll_animation_length = 0.15
+	vim.g.neovide_scroll_animation_length = 0.1
 
 	-- far scroll lines
-	vim.g.neovide_scroll_animation_far_lines = 4
+	vim.g.neovide_scroll_animation_far_lines = 5
 
 	-- hide mouse when typing
 	vim.g.neovide_hide_mouse_when_typing = true
 
 	-- underline scaling
-	vim.g.neovide_underline_stroke_scale = 1.0
+	vim.g.neovide_underline_stroke_scale = 0.5
 
 	-- refresh rate
 	vim.g.neovide_refresh_rate = 60
@@ -60,22 +60,29 @@ if vim.g.neovide then
 
 	-- profiler
 	vim.g.neovide_profiler = false
+	vim.api.nvim_create_user_command(
+		'Profiler',
+		function()
+			vim.g.neovide_profiler = not vim.g.neovide_profiler
+		end,
+		{} -- Options table (empty if no options)
+	)
 
 	-- cursor animation length
-	vim.g.neovide_cursor_animation_length = 0.1
+	vim.g.neovide_cursor_animation_length = 0.08
 
 	-- short animation length
 	vim.g.neovide_cursor_short_animation_length = 0.0
 
 
 	-- cursor trail size
-	vim.g.neovide_cursor_trail_size = 0.4
+	vim.g.neovide_cursor_trail_size = 0.8
 
 	-- cursor antialiasing
 	vim.g.neovide_cursor_antialiasing = true
 
 	-- cursor animation in insert mode
-	vim.g.neovide_cursor_animate_in_insert_mode = true
+	vim.g.neovide_cursor_animate_in_insert_mode = false
 
 	-- animate switch to command line
 	vim.g.neovide_cursor_animate_command_line = true
