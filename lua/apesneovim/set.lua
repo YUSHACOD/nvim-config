@@ -15,10 +15,12 @@ vim.cmd("set shiftwidth=4")
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 vim.cmd("set clipboard+=unnamedplus")
-vim.o.winborder = "rounded"
-
-vim.cmd("highlight! link NormalFloat Normal")
 
 vim.loader.enable()
 
+vim.o.shell = "pwsh"
+
 vim.cmd.colorscheme('naysayer')
+
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' }) -- Floats (Lazy, Mason, etc.)
+vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })       -- Popup menus, also seen in completion

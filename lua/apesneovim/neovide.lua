@@ -23,8 +23,8 @@ if vim.g.neovide then
 	vim.g.neovide_padding_left = 0
 
 	-- float blur
-	vim.g.neovide_floating_blur_amount_x = 1.0
-	vim.g.neovide_floating_blur_amount_y = 1.0
+	vim.g.neovide_floating_blur_amount_x = 2.0
+	vim.g.neovide_floating_blur_amount_y = 2.0
 
 	-- float shadow
 	vim.g.neovide_floating_shadow = false
@@ -33,10 +33,10 @@ if vim.g.neovide then
 	vim.g.neovide_light_radius = 5
 
 	-- float radius
-	vim.g.neovide_floating_corner_radius = 2.0
+	vim.g.neovide_floating_corner_radius = 10.0
 
 	-- window animation length
-	vim.g.neovide_position_animation_length = 0.2
+	vim.g.neovide_position_animation_length = 0.175
 
 	-- scroll animation length
 	vim.g.neovide_scroll_animation_length = 0.1
